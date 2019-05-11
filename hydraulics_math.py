@@ -21,9 +21,9 @@ def jetNozzlePressureLoss(constant,circulation_rate,exponent,mw,nozzle1,nozzle2,
     jet_nozzle_pressure_loss = (constant * (circulation_rate ** exponent) * mw) / ((nozzle1 ** exponent) + (nozzle2 ** exponent) + (nozzle3 ** exponent)) ** exponent
     return(jet_nozzle_pressure_loss)
 jetNozzlePressureLoss(156.5,520,2,12,12,12,12)
-
-# Critical Annular Velocity
-
+#
+# # Critical Annular Velocity
+#
 n_dimsionless = 3.32 * math.log10(float(64)/float(37))
 k_dimensionless = 64 / (1022 ** n_dimsionless)
 x_dimsionless = 81600 * k_dimensionless * (n_dimsionless ** 0.387) / (((8.5 - 7) ** n_dimsionless) * 14)
@@ -31,11 +31,20 @@ x_dimsionless = 81600 * k_dimensionless * (n_dimsionless ** 0.387) / (((8.5 - 7)
 critical_annular_velocity = (x_dimsionless) ** (1 / (2 - n_dimsionless))
 critical_flow_rate_gpm = critical_annular_velocity * ((8.5 ** 2) - (7 ** 2)) / 24.5
 
-print (n_dimsionless)
-print (k_dimensionless)
-print (x_dimsionless)
-print (critical_annular_velocity)
-print (critical_flow_rate_gpm)
+return(n_dimsionless)
+return(k_dimensionless)
+return(x_dimsionless)
+return(critical_annular_velocity)
+return(critical_flow_rate_gpm)
+
+# Mud Pump Calculations
+
+def pumpOutputTriplex(constant, liner_id, two, stroke_length, efficiency):
+    pump_output_triplex = ((constant * (liner_id ** two) * stroke_length) * efficiency)
+    return(pump_output_triplex)
+pumpOutputTriplex(0.000243,7,2,12,0.95)
+
+
 
 # class CriticalAnnularVelocity:
     # def __init__(self, n_dimsionless, k_dimensionless,x_dimensionless):
