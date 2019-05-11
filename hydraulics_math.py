@@ -37,7 +37,7 @@ return(x_dimsionless)
 return(critical_annular_velocity)
 return(critical_flow_rate_gpm)
 
-# Mud Pump Calculations
+# Mud Pump Calculations in Barrels Per Stroke
 
 def pumpOutputTriplex(constant, liner_id, two, stroke_length, efficiency):
     pump_output_triplex = ((constant * (liner_id ** two) * stroke_length) * efficiency)
